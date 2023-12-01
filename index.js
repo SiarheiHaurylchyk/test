@@ -1,19 +1,15 @@
-function addLength(str) {
-    let arr = str.split("");
-    let str1 = "";
-    let res =[];
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i]!==" "){
-            str1+=arr[i];
+function replace(s){
+    let str = "aeiouAEIOU";
+    let res= "";
+     s.split("").filter(e=>{
+        if (str.includes(e)){
+            res+="!";
         }
         else {
-            str1+=" "+str1.length;
-            res.push(str1);
-            str1="";
+         res+=e
         }
-    }
-    res.push(str1+" "+str1.length)
-    return res
+       })
+    return res;
 }
 
-console.log(addLength('apple ban'))
+console.log(replace("ABCDE"))
